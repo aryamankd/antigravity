@@ -48,12 +48,46 @@
       background: #d4a843;
       margin: 0 auto;
     }
+
+    /* Hero load animations */
+    @keyframes heroImgReveal {
+      from { opacity: 0; transform: scale(1.35); }
+      to { opacity: 1; transform: scale(1.25); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes growWidth {
+      from { width: 0; opacity: 0; }
+      to { width: 48px; opacity: 1; }
+    }
+    @keyframes overlayFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-anim { opacity: 0; animation-fill-mode: forwards; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="font-sans text-textPrimary">
 
   <!-- Navbar -->
-  <nav class="flex items-center justify-between px-8 py-4 max-w-[1200px] mx-auto border-b border-gold/20">
+  <nav class="flex items-center justify-between px-8 py-4 max-w-[1200px] mx-auto border-b border-gold/20 hero-anim" style="animation: fadeDown 0.5s ease forwards 0.2s">
     <div class="flex items-center gap-8">
       <div class="flex items-center gap-2">
         <div class="w-5 h-5 bg-emerald rounded-full border-2 border-gold"></div>
@@ -75,34 +109,34 @@
   <!-- Hero Banner -->
   <section class="relative overflow-hidden" style="height: 400px;">
     <!-- Background image -->
-    <img src="girard-perregaux-laureato-three-bridges-limited-beauty.webp" alt="Girard-Perregaux Three Bridges macro" class="absolute inset-0 w-full h-full object-cover object-[0%_25%] scale-125">
+    <img src="girard-perregaux-laureato-three-bridges-limited-beauty.webp" alt="Girard-Perregaux Three Bridges macro" class="hero-img absolute inset-0 w-full h-full object-cover object-[0%_25%] hero-anim" style="animation: heroImgReveal 1.2s ease-out forwards">
     <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/80"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/80 hero-anim" style="animation: overlayFade 0.8s ease forwards 0.1s"></div>
     <!-- Content -->
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
-      <p class="text-xs text-bone/60 mb-3 tracking-[0.2em] uppercase font-light">Est. 2024 &middot; For Collectors & Enthusiasts</p>
-      <h1 class="font-heading text-5xl font-light leading-tight mb-4 text-bone">Your destination for<br>watch news & reviews</h1>
-      <div class="w-12 h-0.5 bg-gold mb-4"></div>
-      <a href="#" class="inline-block bg-gold text-emeraldDark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-goldLight shadow-md">Explore the latest &rarr;</a>
-      <p class="text-[11px] text-bone/50 mt-5 tracking-wide font-light">Trusted by 12,000+ collectors &bull; 500+ reviews &bull; Daily updates</p>
+      <p class="text-xs text-bone/60 mb-3 tracking-[0.2em] uppercase font-light hero-anim" style="animation: fadeUp 0.6s ease forwards 0.3s">Est. 2024 &middot; For Collectors & Enthusiasts</p>
+      <h1 class="font-heading text-5xl font-light leading-tight mb-4 text-bone hero-anim" style="animation: fadeUp 0.7s ease forwards 0.5s">Your destination for<br>watch news & reviews</h1>
+      <div class="w-12 h-0.5 bg-gold mb-4 hero-anim" style="animation: growWidth 0.5s ease forwards 0.7s"></div>
+      <a href="#" class="inline-block bg-gold text-emeraldDark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-goldLight shadow-md hero-anim" style="animation: fadeUp 0.5s ease forwards 0.9s">Explore the latest &rarr;</a>
+      <p class="text-[11px] text-bone/50 mt-5 tracking-wide font-light hero-anim" style="animation: fadeUp 0.5s ease forwards 1.1s">Trusted by 12,000+ collectors &bull; 500+ reviews &bull; Daily updates</p>
     </div>
   </section>
 
   <!-- Main Content Section -->
   <section class="text-center py-10 px-8 max-w-[800px] mx-auto">
     <!-- Section Tabs -->
-    <div class="flex justify-center gap-1 mb-8">
+    <div class="reveal flex justify-center gap-1 mb-8">
       <button id="tab-news" class="section-tab active rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all bg-gold text-emeraldDark shadow-sm">Watch News</button>
       <button id="tab-dictionary" class="section-tab rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Watch Dictionary</button>
     </div>
 
     <!-- NEWS PANEL -->
     <div id="panel-news">
-      <p class="text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">Latest from the Industry</p>
-      <p class="text-sm text-textSecondary mb-6 font-light tracking-wide">New releases & announcements from top brands.</p>
+      <p class="reveal text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">Latest from the Industry</p>
+      <p class="reveal text-sm text-textSecondary mb-6 font-light tracking-wide" style="transition-delay: 0.1s">New releases & announcements from top brands.</p>
 
       <!-- Brand Filter Pills -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8" id="brand-filters">
+      <div class="reveal flex flex-wrap justify-center gap-2 mb-8" id="brand-filters" style="transition-delay: 0.2s">
       <button data-filter="all" class="brand-pill active rounded-full px-4 py-1.5 text-xs tracking-wide transition-all bg-gold text-emeraldDark font-medium shadow-sm">All</button>
       <button data-filter="rolex" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Rolex</button>
       <button data-filter="omega" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Omega</button>
@@ -115,7 +149,7 @@
     </div>
 
     <!-- Article List -->
-    <div class="bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="news-list">
+    <div class="reveal bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="news-list" style="transition-delay: 0.3s">
       <!-- Rolex -->
       <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex" data-show="all">
         <div>
@@ -690,6 +724,30 @@
         icon.textContent = isOpen ? '+' : '−';
       });
     });
+
+    // Scroll reveal (Intersection Observer)
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Hero image parallax on scroll
+    const heroImg = document.querySelector('.hero-img');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          if (y < 600) {
+            heroImg.style.transform = `scale(1.25) translateY(${y * 0.3}px)`;
+          }
+        });
+      });
+    }
   </script>
 
 </body>
