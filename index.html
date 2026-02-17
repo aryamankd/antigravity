@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Patrol HQ - Your Place for Watch News</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bone: '#f5f0e8',
+            boneDark: '#ddd5c4',
+            boneLight: '#faf7f2',
+            emerald: '#0a2e22',
+            emeraldLight: '#10442f',
+            emeraldDark: '#061c15',
+            gold: '#d4a843',
+            goldLight: '#e0bc5e',
+            goldDark: '#b8912a',
+            textPrimary: '#1a1a1a',
+            textSecondary: '#6b6355',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    body {
+      -webkit-font-smoothing: antialiased;
+      background: #f5f0e8;
+    }
+    .underline-thick {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      text-decoration-color: #d4a843;
+    }
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: #d4a843;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body class="font-sans text-textPrimary">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-8 py-4 max-w-[1200px] mx-auto border-b border-gold/20">
+    <div class="flex items-center gap-8">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 bg-emerald rounded-full border-2 border-gold"></div>
+        <span class="font-heading font-medium text-base tracking-wide">Watch Patrol HQ</span>
+      </div>
+      <div class="flex items-center gap-5 text-sm text-textSecondary tracking-wide">
+        <a href="#" class="hover:text-emerald">Latest</a>
+        <a href="#" class="hover:text-emerald">Reviews</a>
+        <a href="#" class="hover:text-emerald">Brands</a>
+        <a href="#" class="hover:text-emerald">Community</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 text-sm">
+      <a href="#" class="text-textSecondary hover:text-emerald tracking-wide">Sign in</a>
+      <a href="#" class="bg-emerald text-bone px-4 py-1.5 rounded-full text-sm font-medium hover:bg-emeraldLight shadow-md">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="relative overflow-hidden" style="height: 400px;">
+    <!-- Background image -->
+    <img src="girard-perregaux-laureato-three-bridges-limited-beauty.webp" alt="Girard-Perregaux Three Bridges macro" class="absolute inset-0 w-full h-full object-cover object-[0%_25%] scale-125">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/80"></div>
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
+      <p class="text-xs text-bone/60 mb-3 tracking-[0.2em] uppercase font-light">Est. 2024 &middot; For Collectors & Enthusiasts</p>
+      <h1 class="font-heading text-5xl font-light leading-tight mb-4 text-bone">Your destination for<br>watch news & reviews</h1>
+      <div class="w-12 h-0.5 bg-gold mb-4"></div>
+      <a href="#" class="inline-block bg-gold text-emeraldDark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-goldLight shadow-md">Explore the latest &rarr;</a>
+      <p class="text-[11px] text-bone/50 mt-5 tracking-wide font-light">Trusted by 12,000+ collectors &bull; 500+ reviews &bull; Daily updates</p>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <section class="text-center py-10 px-8 max-w-[800px] mx-auto">
+    <!-- Section Tabs -->
+    <div class="flex justify-center gap-1 mb-8">
+      <button id="tab-news" class="section-tab active rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all bg-gold text-emeraldDark shadow-sm">Watch News</button>
+      <button id="tab-dictionary" class="section-tab rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Watch Dictionary</button>
+    </div>
+
+    <!-- NEWS PANEL -->
+    <div id="panel-news">
+      <p class="text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">Latest from the Industry</p>
+      <p class="text-sm text-textSecondary mb-6 font-light tracking-wide">New releases & announcements from top brands.</p>
+
+      <!-- Brand Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8" id="brand-filters">
+      <button data-filter="all" class="brand-pill active rounded-full px-4 py-1.5 text-xs tracking-wide transition-all bg-gold text-emeraldDark font-medium shadow-sm">All</button>
+      <button data-filter="rolex" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Rolex</button>
+      <button data-filter="omega" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Omega</button>
+      <button data-filter="patek" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Patek Philippe</button>
+      <button data-filter="ap" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Audemars Piguet</button>
+      <button data-filter="jlc" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">JLC</button>
+      <button data-filter="cartier" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Cartier</button>
+      <button data-filter="tudor" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Tudor</button>
+      <button data-filter="iwc" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">IWC</button>
+    </div>
+
+    <!-- Article List -->
+    <div class="bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="news-list">
+      <!-- Rolex -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Rolex Unveils New GMT-Master II in Green Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 14, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Rolex Submariner Date Gets New 41mm Titanium Case</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 10, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Rolex Day-Date 36 Returns in Platinum with Ice Blue Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 5, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Rolex Explorer II Polar Dial Updated for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 28, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Rolex Cosmograph Daytona Meteorite Dial Leaked</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 22, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+
+      <!-- Omega -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Omega Releases Limited Speedmaster Silver Snoopy Award</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Feb 12, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Omega Seamaster Planet Ocean 600M in Ultra Deep Blue</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 8, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Omega Constellation 41mm Gets Co-Axial Master Upgrade</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Feb 3, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Omega Aqua Terra Worldtimer in Green Meteorite</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 26, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Omega De Ville Prestige Power Reserve Announced</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 19, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+
+      <!-- Patek Philippe -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Launches New Twenty~4 Automatic Collection</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 10, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Nautilus 5811 Now in White Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 6, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Grand Complications Perpetual Calendar</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 30, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Calatrava Pilot Travel Time Ref. 5524T</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 24, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Pilot</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Aquanaut Chronograph in Khaki Green</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 17, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+
+      <!-- Audemars Piguet -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Audemars Piguet Debuts Royal Oak Offshore in Titanium</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Feb 8, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">AP Royal Oak Jumbo Extra-Thin in Salmon Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 4, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">AP Code 11.59 Flyback Chronograph with Lacquered Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Jan 29, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Audemars Piguet Royal Oak Perpetual Calendar Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 21, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">AP [RE]master01 Selfwinding Chronograph Re-Edition</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Jan 15, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+
+      <!-- JLC -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">JLC Reverso Tribute Duoface in Fagliano Leather</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 11, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">JLC Master Ultra Thin Tourbillon Moon in Rose Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 2, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">JLC Polaris Chronograph Worldtimer in Blue Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 27, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">JLC Atmos Classique Phases de Lune Redesigned</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 20, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">JLC Master Control Date Sector Dial Returns for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 13, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+
+      <!-- Cartier -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Cartier Santos-Dumont Skeleton in Micro-Rotor Platinum</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 9, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Cartier Tank Fran&ccedil;aise Gets Slimmer Case for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 1, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Cartier Pasha de Cartier Chronograph in ADLC</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 25, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Cartier Ballon Bleu 33mm in Diamond-Set Rose Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Jan 18, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Cartier Drive de Cartier Moon Phases in Steel</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 12, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+
+      <!-- Tudor -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Tudor Announces Black Bay 41 in New Colorways</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Feb 6, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Tudor Pelagos FXD Chrono Alinghi Red Bull Racing</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 31, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Tudor Black Bay Pro GMT Gets Upgraded Movement</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 23, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Tudor Ranger Returns with Vintage-Inspired 36mm Case</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 16, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Field</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">Tudor Royal Day-Date 41mm Steel & Gold Announced</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 10, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
+      </a>
+
+      <!-- IWC -->
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc" data-show="all">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">IWC Big Pilot 43 Unveiled in New Racing Green Edition</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Feb 7, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Pilot</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">IWC Portugieser Eternal Calendar in Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 29, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">IWC Ingenieur Automatic 40 Revived in Titanium</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Jan 22, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">IWC Pilot's Watch Chronograph Top Gun Lake Tahoe</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 14, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
+      </a>
+      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
+        <div>
+          <p class="text-base font-heading font-medium text-textPrimary">IWC Aquatimer Automatic 42 Returns to the Lineup</p>
+          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 8, 2025</p>
+        </div>
+        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
+      </a>
+    </div>
+    </div><!-- end panel-news -->
+
+    <!-- DICTIONARY PANEL (hidden by default) -->
+    <div id="panel-dictionary" class="hidden">
+      <p class="text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">The Collector's Glossary</p>
+      <p class="text-sm text-textSecondary mb-6 font-light tracking-wide">Essential watch terminology from A to Z.</p>
+
+      <!-- Letter Nav -->
+      <div class="flex flex-wrap justify-center gap-1.5 mb-6" id="letter-nav">
+        <button class="letter-btn active w-8 h-8 rounded-full text-xs font-heading font-medium transition-all bg-gold text-emeraldDark shadow-sm" data-letter="A">A</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary hover:border-gold/50" data-letter="B">B</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary hover:border-gold/50" data-letter="C">C</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>D</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>E</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>F</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>G</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>H</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>I</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>J</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>K</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>L</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>M</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>N</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>O</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>P</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>Q</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>R</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>S</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>T</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>U</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>V</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>W</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>X</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>Y</button>
+        <button class="letter-btn w-8 h-8 rounded-full text-xs font-heading font-medium transition-all border border-gold/25 text-textSecondary/30 cursor-default" disabled>Z</button>
+      </div>
+
+      <!-- Dictionary Terms -->
+      <div class="bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="dictionary-list">
+        <!-- A terms -->
+        <div class="dict-group" data-letter="A">
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Automatic</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A mechanical watch that winds itself using a rotor — a semicircular weight that spins with the motion of your wrist. Also called "self-winding." Most modern luxury watches use this mechanism.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Annual Calendar</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A complication that displays day, date, and month, automatically accounting for months with 30 or 31 days. Only requires one manual correction per year (at the end of February).</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Appliqué</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Hour markers or indices that are separately manufactured and then attached to the dial, rather than printed. Typically made of metal and often found on higher-end watches.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Amplitude</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The arc (in degrees) that the balance wheel swings through during each oscillation. A healthy mechanical watch typically has an amplitude between 250° and 310°. Low amplitude can indicate a service is needed.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">AR Coating</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Anti-reflective coating applied to the crystal to reduce glare and improve legibility. Can be applied to one or both sides. Double-sided AR gives the best clarity but is more prone to smudging.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- B terms -->
+        <div class="dict-group hidden" data-letter="B">
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Bezel</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The ring surrounding the crystal on the front of the watch. Can be fixed or rotating, and often features markings for timing (dive bezels), tracking a second time zone (GMT), or measuring speed (tachymeter).</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Balance Wheel</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The oscillating component at the heart of a mechanical movement that regulates timekeeping. It swings back and forth at a precise rate (typically 28,800 vibrations per hour), dividing time into equal segments.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Blued Hands</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Watch hands that have been heat-treated until they turn a deep blue color. True blued steel is heated to approximately 300°C. The technique is a hallmark of fine finishing and is prized in haute horlogerie.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Bracelet</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A metal band attached to the watch case, made up of individual links. Common styles include Oyster (flat three-piece links), Jubilee (five-piece links), and President (semi-circular links).</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Bridges</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Metal plates within a movement that hold gears, springs, and other components in place. In high-end watchmaking, bridges are often decorated with Geneva stripes, perlage, or beveled edges (anglage).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- C terms -->
+        <div class="dict-group hidden" data-letter="C">
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Chronograph</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A watch with a built-in stopwatch function, operated by pushers on the case side. Features sub-dials that track elapsed seconds, minutes, and sometimes hours. One of the most popular complications.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Caliber</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The specific movement used in a watch, identified by a number or name. An "in-house" caliber is designed and manufactured by the brand itself — a mark of prestige. Example: Rolex Caliber 3235.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Complication</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Any function on a watch beyond displaying hours, minutes, and seconds. Common complications include date, chronograph, GMT, moon phase, and power reserve. "Grand complications" combine multiple complex functions.</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">Crown</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The small knob on the side of the watch used for winding and setting the time. A screw-down crown threads into the case for improved water resistance. Position determines function: pushed in, first click (date), pulled out (time).</p>
+            </div>
+          </div>
+          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
+            <div class="flex items-center justify-between">
+              <h4 class="font-heading font-medium text-base text-textPrimary">COSC</h4>
+              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+            </div>
+            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Contrôle Officiel Suisse des Chronomètres — the official Swiss chronometer testing institute. A COSC-certified watch must keep time within -4/+6 seconds per day across multiple positions and temperatures over 15 days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end panel-dictionary -->
+  </section>
+
+  <!-- News Filter Script -->
+  <script>
+    document.getElementById('brand-filters').addEventListener('click', (e) => {
+      const btn = e.target.closest('.brand-pill');
+      if (!btn) return;
+      const filter = btn.dataset.filter;
+      // Update active pill
+      document.querySelectorAll('.brand-pill').forEach(p => {
+        p.classList.remove('bg-gold', 'text-emeraldDark', 'font-medium', 'shadow-sm', 'active');
+        p.classList.add('border', 'border-gold/25', 'text-textSecondary');
+      });
+      btn.classList.add('bg-gold', 'text-emeraldDark', 'font-medium', 'shadow-sm', 'active');
+      btn.classList.remove('border', 'border-gold/25', 'text-textSecondary');
+      // Filter articles
+      document.querySelectorAll('.news-item').forEach(item => {
+        if (filter === 'all') {
+          item.style.display = item.dataset.show === 'all' ? 'flex' : 'none';
+        } else {
+          item.style.display = item.dataset.brand === filter ? 'flex' : 'none';
+        }
+      });
+    });
+    // Initialize: show only "all" items
+    document.querySelectorAll('.news-item').forEach(item => {
+      item.style.display = item.dataset.show === 'all' ? 'flex' : 'none';
+    });
+
+    // Add thumbnail images to articles
+    const brandImages = {
+      rolex: 'Rolex', omega: 'Omega', patek: 'Patek', ap: 'AP',
+      jlc: 'JLC', cartier: 'Cartier', tudor: 'Tudor', iwc: 'IWC'
+    };
+    document.querySelectorAll('.news-item').forEach(item => {
+      const brand = item.dataset.brand;
+      const label = brandImages[brand] || brand;
+      const img = document.createElement('img');
+      img.src = `https://placehold.co/56x56/ddd5c4/8a7e6e?text=${label}`;
+      img.alt = '';
+      img.className = 'w-12 h-12 rounded-lg object-cover shrink-0';
+      item.insertBefore(img, item.firstChild);
+    });
+
+    // Tab switching (News / Dictionary)
+    document.querySelectorAll('.section-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.section-tab').forEach(t => {
+          t.classList.remove('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+          t.classList.add('border', 'border-gold/25', 'text-textSecondary');
+        });
+        tab.classList.add('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+        tab.classList.remove('border', 'border-gold/25', 'text-textSecondary');
+        const isNews = tab.id === 'tab-news';
+        document.getElementById('panel-news').classList.toggle('hidden', !isNews);
+        document.getElementById('panel-dictionary').classList.toggle('hidden', isNews);
+      });
+    });
+
+    // Dictionary letter navigation
+    document.getElementById('letter-nav').addEventListener('click', (e) => {
+      const btn = e.target.closest('.letter-btn:not([disabled])');
+      if (!btn) return;
+      const letter = btn.dataset.letter;
+      document.querySelectorAll('.letter-btn').forEach(b => {
+        if (b.disabled) return;
+        b.classList.remove('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+        b.classList.add('border', 'border-gold/25', 'text-textSecondary');
+      });
+      btn.classList.add('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+      btn.classList.remove('border', 'border-gold/25', 'text-textSecondary');
+      document.querySelectorAll('.dict-group').forEach(g => {
+        g.classList.toggle('hidden', g.dataset.letter !== letter);
+      });
+      // Collapse all terms when switching letters
+      document.querySelectorAll('.def-wrap').forEach(w => w.classList.remove('max-h-[200px]'));
+      document.querySelectorAll('.def-wrap').forEach(w => w.classList.add('max-h-0'));
+      document.querySelectorAll('.toggle-icon').forEach(i => i.textContent = '+');
+    });
+
+    // Dictionary accordion
+    document.querySelectorAll('.dict-term').forEach(card => {
+      card.addEventListener('click', () => {
+        const wrap = card.querySelector('.def-wrap');
+        const icon = card.querySelector('.toggle-icon');
+        const isOpen = wrap.classList.contains('max-h-[200px]');
+        wrap.classList.toggle('max-h-0', !isOpen);
+        wrap.classList.toggle('max-h-[200px]', isOpen ? false : true);
+        icon.textContent = isOpen ? '+' : '−';
+      });
+    });
+  </script>
+
+</body>
+</html>
