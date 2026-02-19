@@ -122,16 +122,9 @@
     </div>
   </section>
 
-  <!-- Main Content Section -->
-  <section class="text-center py-10 px-8 max-w-[800px] mx-auto">
-    <!-- Section Tabs -->
-    <div class="reveal flex justify-center gap-1 mb-8">
-      <button id="tab-news" class="section-tab active rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all bg-gold text-emeraldDark shadow-sm">Watch News</button>
-      <button id="tab-dictionary" class="section-tab rounded-full px-6 py-2 text-sm font-heading font-medium tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">Watch Dictionary</button>
-    </div>
-
-    <!-- NEWS PANEL -->
-    <div id="panel-news">
+  <!-- WATCH NEWS Section -->
+  <section class="text-center py-10 px-8 max-w-[1000px] mx-auto">
+    <h2 class="reveal font-heading text-2xl font-medium text-textPrimary mb-1">Watch News</h2>
       <p class="reveal text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">Latest from the Industry</p>
       <p class="reveal text-sm text-textSecondary mb-6 font-light tracking-wide" style="transition-delay: 0.1s">New releases & announcements from top brands.</p>
 
@@ -148,310 +141,355 @@
       <button data-filter="iwc" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-gold/25 text-textSecondary hover:border-gold/50">IWC</button>
     </div>
 
-    <!-- Article List -->
-    <div class="reveal bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="news-list" style="transition-delay: 0.3s">
-      <!-- Rolex -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Rolex Unveils New GMT-Master II in Green Ceramic</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 14, 2025</p>
+    <!-- Featured Article (Yahoo-style hero) -->
+    <div class="reveal text-left mb-6" id="featured-article" style="transition-delay: 0.3s">
+      <a href="#" class="news-item block relative rounded-2xl overflow-hidden group" data-brand="rolex" data-show="all" data-featured="true">
+        <img src="https://placehold.co/1000x440/ddd5c4/8a7e6e?text=Rolex+GMT" alt="" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6">
+          <span class="rounded-full px-3 py-1 text-[10px] bg-gold text-emeraldDark font-medium mb-3 inline-block">GMT</span>
+          <h3 class="font-heading text-2xl font-medium text-white leading-snug mb-2">Rolex Unveils New GMT-Master II in Green Ceramic</h3>
+          <p class="text-xs text-white/60 font-light">Hodinkee &middot; Feb 14, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Rolex Submariner Date Gets New 41mm Titanium Case</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 10, 2025</p>
+    </div>
+
+    <!-- Article Card Grid (Yahoo-style) -->
+    <div class="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left" id="news-list" style="transition-delay: 0.4s">
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="rolex">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Rolex" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Diver</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Rolex Submariner Date Gets New 41mm Titanium Case</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Feb 10, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Rolex Day-Date 36 Returns in Platinum with Ice Blue Dial</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 5, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="rolex">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Rolex" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Rolex Day-Date 36 Returns in Platinum with Ice Blue Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">SJX &middot; Feb 5, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Rolex Explorer II Polar Dial Updated for 2025</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 28, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="rolex">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Rolex" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Sport</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Rolex Explorer II Polar Dial Updated for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Monochrome &middot; Jan 28, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="rolex">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Rolex Cosmograph Daytona Meteorite Dial Leaked</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 22, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="rolex">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Rolex" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Rolex Cosmograph Daytona Meteorite Dial Leaked</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Revolution &middot; Jan 22, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
 
       <!-- Omega -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Omega Releases Limited Speedmaster Silver Snoopy Award</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Feb 12, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="omega" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Omega" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Omega Releases Limited Speedmaster Silver Snoopy Award</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Worn &amp; Wound &middot; Feb 12, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Omega Seamaster Planet Ocean 600M in Ultra Deep Blue</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 8, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="omega">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Omega" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Diver</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Omega Seamaster Planet Ocean 600M in Ultra Deep Blue</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Feb 8, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Omega Constellation 41mm Gets Co-Axial Master Upgrade</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Feb 3, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="omega">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Omega" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Omega Constellation 41mm Gets Co-Axial Master Upgrade</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Time+Tide &middot; Feb 3, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Omega Aqua Terra Worldtimer in Green Meteorite</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 26, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="omega">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Omega" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">GMT</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Omega Aqua Terra Worldtimer in Green Meteorite</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Jan 26, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="omega">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Omega De Ville Prestige Power Reserve Announced</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 19, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="omega">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Omega" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Omega De Ville Prestige Power Reserve Announced</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Watchonista &middot; Jan 19, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
 
       <!-- Patek Philippe -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Launches New Twenty~4 Automatic Collection</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 10, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="patek" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Patek" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Patek Philippe Launches New Twenty~4 Automatic Collection</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Feb 10, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Nautilus 5811 Now in White Gold</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 6, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="patek">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Patek" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Sport</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Patek Philippe Nautilus 5811 Now in White Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">SJX &middot; Feb 6, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Grand Complications Perpetual Calendar</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 30, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="patek">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Patek" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Patek Philippe Grand Complications Perpetual Calendar</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Jan 30, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Calatrava Pilot Travel Time Ref. 5524T</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 24, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="patek">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Patek" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Pilot</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Patek Philippe Calatrava Pilot Travel Time Ref. 5524T</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Monochrome &middot; Jan 24, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Pilot</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="patek">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Patek Philippe Aquanaut Chronograph in Khaki Green</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 17, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="patek">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Patek" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Patek Philippe Aquanaut Chronograph in Khaki Green</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Revolution &middot; Jan 17, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
 
-      <!-- Audemars Piguet -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Audemars Piguet Debuts Royal Oak Offshore in Titanium</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Feb 8, 2025</p>
+      <!-- AP -->
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="ap" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=AP" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Sport</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Audemars Piguet Debuts Royal Oak Offshore in Titanium</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Monochrome &middot; Feb 8, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">AP Royal Oak Jumbo Extra-Thin in Salmon Dial</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 4, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="ap">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=AP" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">AP Royal Oak Jumbo Extra-Thin in Salmon Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Feb 4, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">AP Code 11.59 Flyback Chronograph with Lacquered Dial</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Jan 29, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="ap">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=AP" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">AP Code 11.59 Flyback Chronograph with Lacquered Dial</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">SJX &middot; Jan 29, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Audemars Piguet Royal Oak Perpetual Calendar Ceramic</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 21, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="ap">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=AP" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Audemars Piguet Royal Oak Perpetual Calendar Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Worn &amp; Wound &middot; Jan 21, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="ap">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">AP [RE]master01 Selfwinding Chronograph Re-Edition</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Jan 15, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="ap">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=AP" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">AP [RE]master01 Selfwinding Chronograph Re-Edition</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Time+Tide &middot; Jan 15, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
 
       <!-- JLC -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">JLC Reverso Tribute Duoface in Fagliano Leather</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Feb 11, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="jlc" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=JLC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">JLC Reverso Tribute Duoface in Fagliano Leather</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Feb 11, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">JLC Master Ultra Thin Tourbillon Moon in Rose Gold</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 2, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="jlc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=JLC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">JLC Master Ultra Thin Tourbillon Moon in Rose Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Feb 2, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">JLC Polaris Chronograph Worldtimer in Blue Ceramic</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 27, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="jlc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=JLC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">GMT</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">JLC Polaris Chronograph Worldtimer in Blue Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Monochrome &middot; Jan 27, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">JLC Atmos Classique Phases de Lune Redesigned</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 20, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="jlc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=JLC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">JLC Atmos Classique Phases de Lune Redesigned</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Watchonista &middot; Jan 20, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="jlc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">JLC Master Control Date Sector Dial Returns for 2025</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 13, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="jlc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=JLC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">JLC Master Control Date Sector Dial Returns for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Revolution &middot; Jan 13, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
 
       <!-- Cartier -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Cartier Santos-Dumont Skeleton in Micro-Rotor Platinum</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Feb 9, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="cartier" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Cartier" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Cartier Santos-Dumont Skeleton in Micro-Rotor Platinum</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">SJX &middot; Feb 9, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Cartier Tank Fran&ccedil;aise Gets Slimmer Case for 2025</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Feb 1, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="cartier">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Cartier" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Cartier Tank Fran&ccedil;aise Gets Slimmer Case for 2025</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Feb 1, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Cartier Pasha de Cartier Chronograph in ADLC</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 25, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="cartier">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Cartier" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Cartier Pasha de Cartier Chronograph in ADLC</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Worn &amp; Wound &middot; Jan 25, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Cartier Ballon Bleu 33mm in Diamond-Set Rose Gold</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Jan 18, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="cartier">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Cartier" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Cartier Ballon Bleu 33mm in Diamond-Set Rose Gold</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Time+Tide &middot; Jan 18, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="cartier">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Cartier Drive de Cartier Moon Phases in Steel</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 12, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="cartier">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Cartier" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Cartier Drive de Cartier Moon Phases in Steel</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Jan 12, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
 
       <!-- Tudor -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Tudor Announces Black Bay 41 in New Colorways</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Feb 6, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="tudor" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Tudor" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Diver</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Tudor Announces Black Bay 41 in New Colorways</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Revolution &middot; Feb 6, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Tudor Pelagos FXD Chrono Alinghi Red Bull Racing</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 31, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="tudor">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Tudor" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Tudor Pelagos FXD Chrono Alinghi Red Bull Racing</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Jan 31, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Tudor Black Bay Pro GMT Gets Upgraded Movement</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Worn & Wound &middot; Jan 23, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="tudor">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Tudor" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">GMT</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Tudor Black Bay Pro GMT Gets Upgraded Movement</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Worn &amp; Wound &middot; Jan 23, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">GMT</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Tudor Ranger Returns with Vintage-Inspired 36mm Case</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Monochrome &middot; Jan 16, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="tudor">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Tudor" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Field</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Tudor Ranger Returns with Vintage-Inspired 36mm Case</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Monochrome &middot; Jan 16, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Field</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="tudor">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">Tudor Royal Day-Date 41mm Steel & Gold Announced</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Fratello &middot; Jan 10, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="tudor">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=Tudor" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Dress</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">Tudor Royal Day-Date 41mm Steel &amp; Gold Announced</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Fratello &middot; Jan 10, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Dress</span>
       </a>
 
       <!-- IWC -->
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc" data-show="all">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">IWC Big Pilot 43 Unveiled in New Racing Green Edition</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Time+Tide &middot; Feb 7, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="iwc" data-show="all">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=IWC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Pilot</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">IWC Big Pilot 43 Unveiled in New Racing Green Edition</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Time+Tide &middot; Feb 7, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Pilot</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">IWC Portugieser Eternal Calendar in Ceramic</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Hodinkee &middot; Jan 29, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="iwc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=IWC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Complication</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">IWC Portugieser Eternal Calendar in Ceramic</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Hodinkee &middot; Jan 29, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Complication</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">IWC Ingenieur Automatic 40 Revived in Titanium</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">SJX &middot; Jan 22, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="iwc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=IWC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Sport</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">IWC Ingenieur Automatic 40 Revived in Titanium</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">SJX &middot; Jan 22, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Sport</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">IWC Pilot's Watch Chronograph Top Gun Lake Tahoe</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Revolution &middot; Jan 14, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="iwc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=IWC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Chrono</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">IWC Pilot's Watch Chronograph Top Gun Lake Tahoe</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Revolution &middot; Jan 14, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Chrono</span>
       </a>
-      <a href="#" class="news-item flex items-center gap-3 px-4 py-3 bg-boneLight rounded-xl hover:bg-bone transition-colors" data-brand="iwc">
-        <div>
-          <p class="text-base font-heading font-medium text-textPrimary">IWC Aquatimer Automatic 42 Returns to the Lineup</p>
-          <p class="text-[11px] text-textSecondary font-light mt-0.5">Watchonista &middot; Jan 8, 2025</p>
+      <a href="#" class="news-item block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gold/10 group" data-brand="iwc">
+        <img src="https://placehold.co/400x220/ddd5c4/8a7e6e?text=IWC" alt="" class="w-full h-[180px] object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="p-4">
+          <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-gold/20 text-gold font-medium">Diver</span>
+          <p class="text-sm font-heading font-medium text-textPrimary mt-2 leading-snug">IWC Aquatimer Automatic 42 Returns to the Lineup</p>
+          <p class="text-[11px] text-textSecondary font-light mt-1.5">Watchonista &middot; Jan 8, 2025</p>
         </div>
-        <span class="rounded-full px-2.5 py-0.5 text-[10px] bg-bone/40 backdrop-blur-sm border border-gold/15 text-textSecondary font-light ml-auto shrink-0">Diver</span>
       </a>
     </div>
-    </div><!-- end panel-news -->
+  </section>
 
-    <!-- DICTIONARY PANEL (hidden by default) -->
-    <div id="panel-dictionary" class="hidden">
-      <p class="text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">The Collector's Glossary</p>
-      <p class="text-sm text-textSecondary mb-6 font-light tracking-wide">Essential watch terminology from A to Z.</p>
+  <!-- WATCH DICTIONARY Section -->
+  <section class="text-center py-10 px-8 max-w-[1000px] mx-auto">
+    <h2 class="reveal font-heading text-2xl font-medium text-textPrimary mb-1">Watch Dictionary</h2>
+    <p class="reveal text-[11px] text-textSecondary uppercase tracking-[0.2em] font-light mb-2">The Collector's Glossary</p>
+    <p class="reveal text-sm text-textSecondary mb-6 font-light tracking-wide">Essential watch terminology from A to Z.</p>
 
       <!-- Letter Nav -->
       <div class="flex flex-wrap justify-center gap-1.5 mb-6" id="letter-nav">
@@ -484,155 +522,200 @@
       </div>
 
       <!-- Dictionary Terms -->
-      <div class="bg-boneDark/50 rounded-2xl shadow-lg border border-gold/20 max-w-[700px] mx-auto text-left p-2 flex flex-col gap-1.5" id="dictionary-list">
+      <div class="text-left max-w-[1000px] mx-auto" id="dictionary-list">
         <!-- A terms -->
-        <div class="dict-group" data-letter="A">
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Automatic</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A mechanical watch that winds itself using a rotor — a semicircular weight that spins with the motion of your wrist. Also called "self-winding." Most modern luxury watches use this mechanism.</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Annual Calendar</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A complication that displays day, date, and month, automatically accounting for months with 30 or 31 days. Only requires one manual correction per year (at the end of February).</p>
+        <div class="dict-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" data-letter="A">
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Automatic" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Automatic</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A mechanical watch that winds itself using a rotor — a semicircular weight that spins with the motion of your wrist. Also called "self-winding."</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Appliqué</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Hour markers or indices that are separately manufactured and then attached to the dial, rather than printed. Typically made of metal and often found on higher-end watches.</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Amplitude</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The arc (in degrees) that the balance wheel swings through during each oscillation. A healthy mechanical watch typically has an amplitude between 250° and 310°. Low amplitude can indicate a service is needed.</p>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Annual+Calendar" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Annual Calendar</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A complication that displays day, date, and month, automatically accounting for months with 30 or 31 days. Only requires one manual correction per year.</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">AR Coating</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Appliqu%C3%A9" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Appliqué</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Hour markers or indices that are separately manufactured and then attached to the dial, rather than printed. Typically made of metal.</p>
+              </div>
             </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Anti-reflective coating applied to the crystal to reduce glare and improve legibility. Can be applied to one or both sides. Double-sided AR gives the best clarity but is more prone to smudging.</p>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Amplitude" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Amplitude</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The arc (in degrees) that the balance wheel swings through during each oscillation. A healthy watch typically has 250°–310°.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=AR+Coating" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">AR Coating</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Anti-reflective coating applied to the crystal to reduce glare and improve legibility. Can be applied to one or both sides.</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- B terms -->
-        <div class="dict-group hidden" data-letter="B">
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Bezel</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The ring surrounding the crystal on the front of the watch. Can be fixed or rotating, and often features markings for timing (dive bezels), tracking a second time zone (GMT), or measuring speed (tachymeter).</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Balance Wheel</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The oscillating component at the heart of a mechanical movement that regulates timekeeping. It swings back and forth at a precise rate (typically 28,800 vibrations per hour), dividing time into equal segments.</p>
+        <div class="dict-group hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" data-letter="B">
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Bezel" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Bezel</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The ring surrounding the crystal. Can be fixed or rotating, with markings for timing, GMT, or tachymeter.</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Blued Hands</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Watch hands that have been heat-treated until they turn a deep blue color. True blued steel is heated to approximately 300°C. The technique is a hallmark of fine finishing and is prized in haute horlogerie.</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Bracelet</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A metal band attached to the watch case, made up of individual links. Common styles include Oyster (flat three-piece links), Jubilee (five-piece links), and President (semi-circular links).</p>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Balance+Wheel" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Balance Wheel</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The oscillating component at the heart of a mechanical movement that regulates timekeeping at typically 28,800 vibrations per hour.</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Bridges</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Blued+Hands" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Blued Hands</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Watch hands heat-treated to ~300°C until they turn deep blue. A hallmark of fine finishing in haute horlogerie.</p>
+              </div>
             </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Metal plates within a movement that hold gears, springs, and other components in place. In high-end watchmaking, bridges are often decorated with Geneva stripes, perlage, or beveled edges (anglage).</p>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Bracelet" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Bracelet</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A metal band of individual links. Styles include Oyster, Jubilee, and President.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Bridges" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Bridges</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Metal plates holding movement components. Often decorated with Geneva stripes, perlage, or anglage.</p>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- C terms -->
-        <div class="dict-group hidden" data-letter="C">
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Chronograph</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A watch with a built-in stopwatch function, operated by pushers on the case side. Features sub-dials that track elapsed seconds, minutes, and sometimes hours. One of the most popular complications.</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Caliber</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The specific movement used in a watch, identified by a number or name. An "in-house" caliber is designed and manufactured by the brand itself — a mark of prestige. Example: Rolex Caliber 3235.</p>
+        <div class="dict-group hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" data-letter="C">
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Chronograph" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Chronograph</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">A built-in stopwatch function with sub-dials tracking elapsed seconds, minutes, and hours. One of the most popular complications.</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Complication</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Any function on a watch beyond displaying hours, minutes, and seconds. Common complications include date, chronograph, GMT, moon phase, and power reserve. "Grand complications" combine multiple complex functions.</p>
-            </div>
-          </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">Crown</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
-            </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The small knob on the side of the watch used for winding and setting the time. A screw-down crown threads into the case for improved water resistance. Position determines function: pushed in, first click (date), pulled out (time).</p>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Caliber" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Caliber</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The specific movement identified by number or name. "In-house" calibers are designed by the brand itself — a mark of prestige.</p>
+              </div>
             </div>
           </div>
-          <div class="dict-term bg-boneLight rounded-xl px-5 py-3.5 cursor-pointer hover:bg-bone transition-colors">
-            <div class="flex items-center justify-between">
-              <h4 class="font-heading font-medium text-base text-textPrimary">COSC</h4>
-              <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Complication" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Complication</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Any function beyond hours, minutes, and seconds — date, chronograph, GMT, moon phase, power reserve. "Grand complications" combine multiple.</p>
+              </div>
             </div>
-            <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
-              <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Contrôle Officiel Suisse des Chronomètres — the official Swiss chronometer testing institute. A COSC-certified watch must keep time within -4/+6 seconds per day across multiple positions and temperatures over 15 days.</p>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=Crown" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">Crown</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">The knob for winding and setting the time. Screw-down crowns thread into the case for water resistance.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dict-term bg-white rounded-xl overflow-hidden cursor-pointer hover:bg-boneLight transition-colors shadow-md border border-gold/10">
+            <img src="https://placehold.co/400x160/ddd5c4/8a7e6e?text=COSC" alt="" class="w-full h-[120px] object-cover">
+            <div class="px-4 py-3">
+              <div class="flex items-center justify-between">
+                <h4 class="font-heading font-medium text-sm text-textPrimary">COSC</h4>
+                <span class="toggle-icon text-gold/60 text-sm font-light ml-4">+</span>
+              </div>
+              <div class="def-wrap overflow-hidden max-h-0 transition-all duration-200">
+                <p class="text-[11px] text-textSecondary font-light mt-2 leading-relaxed">Official Swiss chronometer testing institute. Certified watches must keep time within -4/+6 seconds per day over 15 days of testing.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div><!-- end panel-dictionary -->
+    </div>
   </section>
 
   <!-- News Filter Script -->
@@ -648,49 +731,24 @@
       });
       btn.classList.add('bg-gold', 'text-emeraldDark', 'font-medium', 'shadow-sm', 'active');
       btn.classList.remove('border', 'border-gold/25', 'text-textSecondary');
-      // Filter articles
-      document.querySelectorAll('.news-item').forEach(item => {
-        if (filter === 'all') {
-          item.style.display = item.dataset.show === 'all' ? 'flex' : 'none';
-        } else {
-          item.style.display = item.dataset.brand === filter ? 'flex' : 'none';
-        }
-      });
-    });
-    // Initialize: show only "all" items
-    document.querySelectorAll('.news-item').forEach(item => {
-      item.style.display = item.dataset.show === 'all' ? 'flex' : 'none';
-    });
-
-    // Add thumbnail images to articles
-    const brandImages = {
-      rolex: 'Rolex', omega: 'Omega', patek: 'Patek', ap: 'AP',
-      jlc: 'JLC', cartier: 'Cartier', tudor: 'Tudor', iwc: 'IWC'
-    };
-    document.querySelectorAll('.news-item').forEach(item => {
-      const brand = item.dataset.brand;
-      const label = brandImages[brand] || brand;
-      const img = document.createElement('img');
-      img.src = `https://placehold.co/56x56/ddd5c4/8a7e6e?text=${label}`;
-      img.alt = '';
-      img.className = 'w-12 h-12 rounded-lg object-cover shrink-0';
-      item.insertBefore(img, item.firstChild);
-    });
-
-    // Tab switching (News / Dictionary)
-    document.querySelectorAll('.section-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.section-tab').forEach(t => {
-          t.classList.remove('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
-          t.classList.add('border', 'border-gold/25', 'text-textSecondary');
+      // Filter articles in grid
+      const gridItems = document.querySelectorAll('#news-list .news-item');
+      const featuredEl = document.querySelector('#featured-article .news-item');
+      if (filter === 'all') {
+        featuredEl.style.display = 'block';
+        gridItems.forEach(item => item.style.display = 'block');
+      } else {
+        featuredEl.style.display = featuredEl.dataset.brand === filter ? 'block' : 'none';
+        gridItems.forEach(item => {
+          item.style.display = item.dataset.brand === filter ? 'block' : 'none';
         });
-        tab.classList.add('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
-        tab.classList.remove('border', 'border-gold/25', 'text-textSecondary');
-        const isNews = tab.id === 'tab-news';
-        document.getElementById('panel-news').classList.toggle('hidden', !isNews);
-        document.getElementById('panel-dictionary').classList.toggle('hidden', isNews);
-      });
+      }
     });
+    // Initialize: show all items
+    document.querySelectorAll('#news-list .news-item').forEach(item => {
+      item.style.display = 'block';
+    });
+
 
     // Dictionary letter navigation
     document.getElementById('letter-nav').addEventListener('click', (e) => {
