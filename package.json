@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "puppeteer": "^24.37.3",
+    "rss-parser": "^3.13.0"
+  }
+}

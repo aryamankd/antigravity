@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Patrol HQ - Your Place for Watch News</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bone: '#1c1c1e',
+            boneDark: '#141416',
+            boneLight: '#2c2c2e',
+            emerald: '#0a2e22',
+            emeraldLight: '#10442f',
+            emeraldDark: '#061c15',
+            gold: '#d4a843',
+            goldLight: '#e0bc5e',
+            goldDark: '#b8912a',
+            textPrimary: '#f0f0f0',
+            textSecondary: '#999999',
+            cardBg: '#2c2c2e',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    body {
+      -webkit-font-smoothing: antialiased;
+      background: #1c1c1e;
+    }
+    .gradient-title {
+      background: linear-gradient(90deg, #ffffff, #aaaaaa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .underline-thick {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+      text-decoration-color: #d4a843;
+    }
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: #d4a843;
+      margin: 0 auto;
+    }
+
+    /* Hero load animations */
+    @keyframes heroImgFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes growWidth {
+      from { width: 0; opacity: 0; }
+      to { width: 48px; opacity: 1; }
+    }
+    @keyframes overlayFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero-anim { opacity: 0; animation-fill-mode: forwards; }
+    .hero-img { will-change: transform; }
+    #news-section { will-change: transform, opacity; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="font-sans text-textPrimary">
+
+  <!-- Navbar -->
+  <nav class="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-8 py-4 max-w-[1200px] mx-auto hero-anim" style="animation: fadeDown 0.5s ease forwards 0.2s">
+    <div class="flex items-center gap-8">
+      <span class="font-heading font-medium text-2xl tracking-wide text-textPrimary">Watch Patrol HQ</span>
+      <div class="flex items-center gap-5 text-sm tracking-wide">
+        <a href="#" id="nav-news" class="nav-link text-gold font-medium border-b-2 border-gold pb-0.5 hover:text-gold transition-all">News</a>
+        <a href="#" id="nav-dictionary" class="nav-link text-textSecondary hover:text-gold transition-all pb-0.5 border-b-2 border-transparent">Dictionary</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section id="hero-section" class="relative overflow-hidden" style="height: 100vh;">
+    <!-- Background image -->
+    <img src="girard-perregaux-laureato-three-bridges-limited-beauty.webp" alt="Girard-Perregaux Three Bridges macro" class="hero-img absolute inset-0 w-full h-full object-cover object-[0%_25%] hero-anim" style="animation: heroImgFade 1.2s ease-out forwards">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 hero-anim" style="background: linear-gradient(160deg, rgba(28,28,30,0.85) 0%, rgba(44,44,46,0.7) 40%, rgba(26,26,28,0.9) 100%); animation: overlayFade 0.8s ease forwards 0.1s"></div>
+    <!-- Content -->
+    <div id="hero-text" class="relative z-10 flex flex-col items-center justify-center h-full text-center px-8">
+      <h1 class="font-sans text-5xl font-light leading-tight mb-4 gradient-title hero-anim" style="animation: fadeUp 0.7s ease forwards 0.5s">Your destination for<br>watch news & reviews</h1>
+      <div class="w-12 h-0.5 bg-gold mb-4 hero-anim" style="animation: growWidth 0.5s ease forwards 0.7s"></div>
+      <a href="#" id="explore-btn" class="inline-block bg-gold text-emeraldDark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-goldLight shadow-md hero-anim" style="animation: fadeUp 0.5s ease forwards 0.9s">Explore the latest &rarr;</a>
+    </div>
+  </section>
+
+  <!-- WATCH NEWS Section -->
+  <section id="news-section" class="text-center py-10 px-8 max-w-[1000px] mx-auto">
+    <h2 class="font-heading text-5xl font-medium text-textPrimary mb-2">News</h2>
+      <p class="text-sm text-textSecondary uppercase tracking-[0.2em] font-light mb-3">Latest from the Industry</p>
+      <p class="text-sm text-textSecondary mb-6 font-light tracking-wide">New releases & announcements from top brands.</p>
+
+      <!-- Brand Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8" id="brand-filters">
+      <button data-filter="all" class="brand-pill active rounded-full px-4 py-1.5 text-xs tracking-wide transition-all bg-gold text-emeraldDark font-medium shadow-sm">All</button>
+      <button data-filter="rolex" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Rolex</button>
+      <button data-filter="omega" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Omega</button>
+      <button data-filter="patek" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Patek Philippe</button>
+      <button data-filter="ap" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Audemars Piguet</button>
+      <button data-filter="jlc" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">JLC</button>
+      <button data-filter="cartier" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Cartier</button>
+      <button data-filter="tudor" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">Tudor</button>
+      <button data-filter="iwc" class="brand-pill rounded-full px-4 py-1.5 text-xs tracking-wide transition-all border border-white/[0.12] text-textSecondary hover:border-gold/50">IWC</button>
+    </div>
+
+    <!-- Featured Article -->
+    <div class="text-left mb-6" id="featured-article">
+      {{FEATURED_ARTICLE}}
+    </div>
+
+    <!-- Article Card Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left" id="news-list">
+      {{NEWS_CARDS}}
+    </div>
+  </section>
+
+  <!-- WATCH DICTIONARY Section -->
+  <section id="dictionary-section" class="text-center py-10 px-8 max-w-[1000px] mx-auto hidden">
+    <h2 class="reveal font-heading text-5xl font-medium text-textPrimary mb-8">Dictionary</h2>
+
+      <!-- Letter Nav -->
+      <div class="flex flex-wrap justify-center gap-1.5 mb-6 sticky top-0 py-3 z-20 backdrop-blur-sm bg-bone/60" id="letter-nav">
+        {{LETTER_NAV}}
+      </div>
+
+      <!-- Dictionary Terms -->
+      <div class="text-left max-w-[1000px] mx-auto" id="dictionary-list">
+        {{DICTIONARY_TERMS}}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // === NAV SWITCHING (News / Dictionary) ===
+    const navNews = document.getElementById('nav-news');
+    const navDict = document.getElementById('nav-dictionary');
+    const heroSection = document.getElementById('hero-section');
+    const newsSection = document.getElementById('news-section');
+    const dictSection = document.getElementById('dictionary-section');
+
+    function setActiveNav(active) {
+      const isNews = active === 'news';
+      navNews.classList.toggle('text-gold', isNews);
+      navNews.classList.toggle('font-medium', isNews);
+      navNews.classList.toggle('border-gold', isNews);
+      navNews.classList.toggle('border-transparent', !isNews);
+      navNews.classList.toggle('text-textSecondary', !isNews);
+
+      navDict.classList.toggle('text-gold', !isNews);
+      navDict.classList.toggle('font-medium', !isNews);
+      navDict.classList.toggle('border-gold', !isNews);
+      navDict.classList.toggle('border-transparent', isNews);
+      navDict.classList.toggle('text-textSecondary', isNews);
+
+      heroSection.style.display = isNews ? '' : 'none';
+      newsSection.style.display = isNews ? '' : 'none';
+      dictSection.classList.toggle('hidden', isNews);
+      dictSection.style.paddingTop = isNews ? '' : '4rem';
+      window.scrollTo(0, 0);
+    }
+
+    navNews.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('news'); });
+    navDict.addEventListener('click', (e) => { e.preventDefault(); setActiveNav('dictionary'); });
+
+    // "Explore the latest" smooth scroll to news
+    document.getElementById('explore-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      newsSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // === HERO SCROLL ANIMATION ===
+    const heroText = document.getElementById('hero-text');
+    const heroImg = document.querySelector('.hero-img');
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(() => {
+        const heroH = heroSection.offsetHeight;
+        const y = window.scrollY;
+        if (y > heroH) return;
+
+        const progress = Math.min(y / heroH, 1);
+        heroText.style.opacity = 1 - progress;
+        heroText.style.transform = `scale(${1 - progress * 0.05})`;
+        heroImg.style.transform = `translateY(${y * 0.4}px)`;
+
+        const articleProgress = Math.max((progress - 0.5) / 0.5, 0);
+        newsSection.style.transform = `translateY(${40 * (1 - articleProgress)}px)`;
+        newsSection.style.opacity = articleProgress;
+      });
+    });
+
+    // === BRAND FILTER ===
+    document.getElementById('brand-filters').addEventListener('click', (e) => {
+      const btn = e.target.closest('.brand-pill');
+      if (!btn) return;
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.brand-pill').forEach(p => {
+        p.classList.remove('bg-gold', 'text-emeraldDark', 'font-medium', 'shadow-sm', 'active');
+        p.classList.add('border', 'border-white/[0.12]', 'text-textSecondary');
+      });
+      btn.classList.add('bg-gold', 'text-emeraldDark', 'font-medium', 'shadow-sm', 'active');
+      btn.classList.remove('border', 'border-white/[0.12]', 'text-textSecondary');
+      const gridItems = document.querySelectorAll('#news-list .news-item');
+      const featuredEl = document.querySelector('#featured-article .news-item');
+      if (filter === 'all') {
+        featuredEl.style.display = 'block';
+        gridItems.forEach(item => item.style.display = 'block');
+      } else {
+        featuredEl.style.display = featuredEl.dataset.brand === filter ? 'block' : 'none';
+        gridItems.forEach(item => {
+          item.style.display = item.dataset.brand === filter ? 'block' : 'none';
+        });
+      }
+    });
+    document.querySelectorAll('#news-list .news-item').forEach(item => {
+      item.style.display = 'block';
+    });
+
+    // === DICTIONARY LETTER NAV ===
+    document.getElementById('letter-nav').addEventListener('click', (e) => {
+      const btn = e.target.closest('.letter-btn:not([disabled])');
+      if (!btn) return;
+      const letter = btn.dataset.letter;
+      const target = document.getElementById('dict-' + letter);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    function setActiveLetter(letter) {
+      document.querySelectorAll('.letter-btn').forEach(b => {
+        if (b.disabled) return;
+        if (b.dataset.letter === letter) {
+          b.classList.add('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+          b.classList.remove('border', 'border-gold/30', 'text-gold/40', 'bg-gold/5');
+        } else {
+          b.classList.remove('bg-gold', 'text-emeraldDark', 'shadow-sm', 'active');
+          b.classList.add('border', 'border-gold/30', 'text-gold/40', 'bg-gold/5');
+        }
+      });
+    }
+
+    const letterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveLetter(entry.target.dataset.letter);
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    document.querySelectorAll('.dict-group-heading').forEach(h => {
+      letterObserver.observe(h);
+    });
+
+    // === DICTIONARY ACCORDION ===
+    document.querySelectorAll('.dict-term').forEach(card => {
+      card.dataset.open = 'false';
+      card.addEventListener('click', () => {
+        const isOpen = card.dataset.open === 'true';
+        document.querySelectorAll('.dict-term[data-open="true"]').forEach(other => {
+          if (other === card) return;
+          other.dataset.open = 'false';
+          other.querySelector('.def-wrap').style.maxHeight = '0px';
+          other.querySelector('.toggle-icon').textContent = '+';
+        });
+        const wrap = card.querySelector('.def-wrap');
+        const icon = card.querySelector('.toggle-icon');
+        if (isOpen) {
+          card.dataset.open = 'false';
+          wrap.style.maxHeight = '0px';
+          icon.textContent = '+';
+        } else {
+          card.dataset.open = 'true';
+          wrap.style.maxHeight = wrap.scrollHeight + 'px';
+          icon.textContent = '\u2212';
+        }
+      });
+    });
+
+    // === SCROLL REVEAL ===
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>

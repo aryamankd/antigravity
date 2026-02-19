@@ -1,0 +1,90 @@
+[
+  { "term": "Automatic", "letter": "A", "definition": "A mechanical watch that winds itself using a rotor \u2014 a semicircular weight that spins with the motion of your wrist. Also called \u201cself-winding.\u201d" },
+  { "term": "Annual Calendar", "letter": "A", "definition": "A complication that displays day, date, and month, automatically accounting for months with 30 or 31 days. Only requires one manual correction per year (end of February)." },
+  { "term": "Amplitude", "letter": "A", "definition": "The arc (in degrees) that the balance wheel swings through during each oscillation. A healthy mechanical watch typically has 250\u00b0\u2013310\u00b0." },
+  { "term": "Appliqu\u00e9", "letter": "A", "definition": "Hour markers or indices that are separately manufactured and then attached to the dial, rather than printed. Typically made of metal for a three-dimensional effect." },
+  { "term": "AR Coating", "letter": "A", "definition": "Anti-reflective coating applied to the crystal to reduce glare and improve legibility. Can be applied to one or both sides of the crystal." },
+
+  { "term": "Bezel", "letter": "B", "definition": "The ring surrounding the crystal on a watch case. Can be fixed or rotating, with markings for timing, GMT, tachymeter, or dive bezels." },
+  { "term": "Balance Wheel", "letter": "B", "definition": "The oscillating component at the heart of a mechanical movement that regulates timekeeping, typically vibrating at 28,800 times per hour (4 Hz)." },
+  { "term": "Blued Hands", "letter": "B", "definition": "Watch hands heat-treated to approximately 300\u00b0C until they turn a deep, vivid blue. A hallmark of fine finishing in haute horlogerie." },
+  { "term": "Bracelet", "letter": "B", "definition": "A metal watch band made of individual links. Common styles include Oyster, Jubilee, President, and ladder bracelets." },
+
+  { "term": "Chronograph", "letter": "C", "definition": "A watch with a built-in stopwatch function, using sub-dials to track elapsed seconds, minutes, and sometimes hours. One of the most popular complications." },
+  { "term": "Caliber", "letter": "C", "definition": "The specific movement inside a watch, identified by number or name. \u201cIn-house\u201d calibers designed and manufactured by the brand itself are considered a mark of prestige." },
+  { "term": "Complication", "letter": "C", "definition": "Any function beyond basic hours, minutes, and seconds \u2014 such as date, chronograph, GMT, moon phase, or power reserve. \u201cGrand complications\u201d combine multiple functions." },
+  { "term": "Crown", "letter": "C", "definition": "The knob on the side of a watch case used for winding and setting the time. Screw-down crowns thread into the case tube for enhanced water resistance." },
+  { "term": "COSC", "letter": "C", "definition": "Contr\u00f4le Officiel Suisse des Chronom\u00e8tres \u2014 the official Swiss chronometer testing institute. Certified movements must keep time within -4/+6 seconds per day." },
+  { "term": "Caseback", "letter": "C", "definition": "The rear cover of a watch case. Can be solid (for durability) or transparent/exhibition (to showcase the movement). Secured by screws, snap-fit, or screw-down." },
+
+  { "term": "Dial", "letter": "D", "definition": "The face of the watch displaying the time. Can feature various textures like sunburst, guilloch\u00e9, tapisserie, enamel, or meteorite." },
+  { "term": "Deployment Clasp", "letter": "D", "definition": "A folding buckle mechanism on a watch strap or bracelet that opens like a butterfly, keeping the watch securely on the wrist while making it easy to put on and remove." },
+  { "term": "Dress Watch", "letter": "D", "definition": "A thin, elegant timepiece designed for formal occasions. Typically features a simple dial, no complications beyond date, and fits under a shirt cuff." },
+
+  { "term": "Escapement", "letter": "E", "definition": "The mechanism that controls the release of energy from the mainspring to the gear train, one tooth at a time. The lever escapement is the most common type in mechanical watches." },
+  { "term": "Exhibition Caseback", "letter": "E", "definition": "A transparent caseback, usually sapphire crystal, that allows the wearer to view the movement and its finishing. Common in haute horlogerie pieces." },
+
+  { "term": "Flyback", "letter": "F", "definition": "A chronograph complication that allows the user to reset and restart the stopwatch with a single push, rather than the usual stop-reset-start sequence. Valued by pilots." },
+  { "term": "Fluted Bezel", "letter": "F", "definition": "A bezel with vertical ridges or grooves around its circumference. Originally functional (for grip when screwing), now primarily decorative. Iconic on the Rolex Datejust." },
+  { "term": "Foudroyante", "letter": "F", "definition": "A complication featuring a rapidly jumping hand that completes one revolution per second, dividing each second into fractions (typically quarters or eighths)." },
+
+  { "term": "GMT", "letter": "G", "definition": "Greenwich Mean Time \u2014 a complication with an additional hand that tracks a second time zone on a 24-hour scale. Originally developed for Pan Am pilots." },
+  { "term": "Guilloch\u00e9", "letter": "G", "definition": "An intricate, repetitive pattern engraved into the dial using a rose engine lathe. Creates a textured, light-catching surface. A hallmark of brands like Breguet." },
+  { "term": "Gasket", "letter": "G", "definition": "Rubber or synthetic seals placed at the crown, caseback, and crystal to prevent water and dust from entering the watch case." },
+
+  { "term": "Haute Horlogerie", "letter": "H", "definition": "French for \u201chigh watchmaking.\u201d Refers to the highest level of watchmaking artistry, involving hand-finished movements, rare complications, and exceptional craftsmanship." },
+  { "term": "Hacking", "letter": "H", "definition": "A feature that stops the seconds hand when the crown is pulled out, allowing precise time-setting to the exact second. Standard in most modern mechanical watches." },
+  { "term": "Helium Escape Valve", "letter": "H", "definition": "A one-way valve found on saturation dive watches that releases helium gas that seeps into the case during deep-sea decompression, preventing crystal blow-off." },
+
+  { "term": "Incabloc", "letter": "I", "definition": "A widely used shock protection system for the balance wheel jewels in mechanical movements. Uses a spring-loaded setting that absorbs impacts, preventing jewel damage." },
+  { "term": "Index", "letter": "I", "definition": "The hour markers on a watch dial. Can be applied (raised metal), printed, or luminous. Styles include batons, dots, Roman numerals, and Arabic numerals." },
+
+  { "term": "Jewels", "letter": "J", "definition": "Synthetic ruby or sapphire bearings used at friction points in a movement to reduce wear. A standard automatic movement typically has 21\u201325 jewels." },
+  { "term": "Jumping Hour", "letter": "J", "definition": "A complication where the hour is displayed in a window (aperture) rather than on a hand, jumping instantaneously from one hour to the next." },
+
+  { "term": "Keyless Works", "letter": "K", "definition": "The mechanism that allows winding and time-setting via the crown, eliminating the need for a separate key. Standard in all modern watches since the mid-1800s." },
+
+  { "term": "Lug", "letter": "L", "definition": "The projections on a watch case that connect the strap or bracelet. Lug-to-lug distance determines how a watch wears on the wrist. Common styles include straight, curved, and hidden lugs." },
+  { "term": "Luminous Material", "letter": "L", "definition": "Photo-luminescent paint applied to hands and indices for low-light visibility. Modern materials include Super-LumiNova, Chromalight (Rolex), and tritium gas tubes." },
+
+  { "term": "Mainspring", "letter": "M", "definition": "The coiled spring inside the barrel that stores energy and powers a mechanical watch. When fully wound, it slowly uncoils to drive the gear train." },
+  { "term": "Minute Repeater", "letter": "M", "definition": "One of the most complex complications \u2014 chimes the time audibly on demand using tiny hammers and gongs inside the case. Hours, quarter-hours, and minutes each have a distinct tone." },
+  { "term": "Moon Phase", "letter": "M", "definition": "A complication that displays the current phase of the moon through an aperture on the dial, using a disc with two moons that completes one rotation every 59 days." },
+  { "term": "Movement", "letter": "M", "definition": "The complete mechanism (caliber) inside a watch that drives the hands and powers complications. Types include manual-wind, automatic, and quartz." },
+
+  { "term": "NATO Strap", "letter": "N", "definition": "A one-piece nylon strap that threads through both spring bars, originally issued to British Ministry of Defence personnel. Popular for its comfort, durability, and easy swapping." },
+
+  { "term": "Oscillation", "letter": "O", "definition": "One complete back-and-forth swing of the balance wheel. Measured in vibrations per hour (vph) \u2014 most modern movements oscillate at 28,800 vph (4 Hz)." },
+  { "term": "Oyster Case", "letter": "O", "definition": "Rolex\u2019s patented waterproof case design, introduced in 1926. Features a screw-down caseback, crown, and bezel, forming a hermetically sealed unit." },
+
+  { "term": "Power Reserve", "letter": "P", "definition": "The amount of time a mechanical watch can run when fully wound before stopping. Typically 40\u201380 hours for standard movements; some exceed 10 days." },
+  { "term": "Perpetual Calendar", "letter": "P", "definition": "A complication that automatically accounts for months of different lengths and leap years, requiring no manual date correction until the year 2100." },
+  { "term": "Perlage", "letter": "P", "definition": "A decorative finishing technique of overlapping circular patterns applied to movement plates, also called \u201csnailing.\u201d Purely aesthetic, indicating hand-finishing care." },
+
+  { "term": "Quartz", "letter": "Q", "definition": "A watch movement powered by a battery that sends current through a quartz crystal, causing it to vibrate at 32,768 Hz. Far more accurate than mechanical movements." },
+
+  { "term": "Regulator", "letter": "R", "definition": "A watch dial layout where hours, minutes, and seconds are each displayed on separate sub-dials or hands, rather than sharing a common center point." },
+  { "term": "Retrograde", "letter": "R", "definition": "A display where the hand travels along an arc rather than a full circle, then snaps back to the starting position. Often used for date or day-of-week displays." },
+  { "term": "Rotor", "letter": "R", "definition": "The semicircular weight in an automatic movement that spins with wrist motion to wind the mainspring. Can be full (360\u00b0) or micro-rotor (small, movement-integrated)." },
+
+  { "term": "Sapphire Crystal", "letter": "S", "definition": "Synthetic corundum glass used to cover the dial. Scores 9 on the Mohs hardness scale (only diamond is harder), making it virtually scratch-proof." },
+  { "term": "Skeleton", "letter": "S", "definition": "A watch where the dial and/or movement plates are cut away to reveal the inner workings. Requires careful hand-finishing as all components are visible." },
+  { "term": "Spring Drive", "letter": "S", "definition": "Seiko\u2019s proprietary hybrid movement that uses a mainspring for power but a quartz-regulated electromagnetic brake for timekeeping. Produces a perfectly smooth sweep." },
+  { "term": "Sub-dial", "letter": "S", "definition": "A smaller dial within the main dial, used to display additional information such as chronograph counters, small seconds, or calendar functions." },
+
+  { "term": "Tourbillon", "letter": "T", "definition": "A rotating cage that holds the escapement and balance wheel, completing one revolution per minute to counteract the effects of gravity on timekeeping accuracy." },
+  { "term": "Tachymeter", "letter": "T", "definition": "A scale on the bezel or dial used to measure speed over a known distance. Start the chronograph, stop at the mile/kilometer marker, and read speed off the scale." },
+  { "term": "Tritium", "letter": "T", "definition": "A radioactive hydrogen isotope formerly used in watch lume. Self-powered (no charging needed) but decays over ~12 years. Replaced by Super-LumiNova in modern watches." },
+
+  { "term": "Unidirectional Bezel", "letter": "U", "definition": "A rotating bezel that only turns counter-clockwise, used on dive watches. This safety feature ensures elapsed dive time can only increase if accidentally bumped." },
+
+  { "term": "Valjoux", "letter": "V", "definition": "A family of widely used Swiss chronograph movements made by ETA (Swatch Group). The Valjoux 7750 is one of the most common automatic chronograph calibers in the industry." },
+  { "term": "Vibrations Per Hour", "letter": "V", "definition": "The frequency of a movement\u2019s balance wheel oscillation. Common rates: 21,600 vph (3 Hz), 28,800 vph (4 Hz), and 36,000 vph (5 Hz). Higher frequency generally means smoother seconds hand sweep." },
+
+  { "term": "Water Resistance", "letter": "W", "definition": "A watch\u2019s ability to withstand water pressure, rated in meters or ATM. 30m = splash-proof, 100m = swimming, 200m+ = diving. Ratings assume static pressure, not real-world use." },
+  { "term": "Winding", "letter": "W", "definition": "The process of tensioning the mainspring to store energy. Can be done manually (turning the crown) or automatically (via a rotor responding to wrist movement)." },
+
+  { "term": "Yacht-Timer", "letter": "Y", "definition": "A regatta countdown complication used in yacht racing. Counts down the minutes before a race start, typically 10, 5, or 1 minute, with visual or audible signals." },
+
+  { "term": "Zaratsu Polishing", "letter": "Z", "definition": "A mirror-finishing technique perfected by Seiko\u2019s Grand Seiko division. The case is held against a rotating tin plate to achieve a perfectly flat, distortion-free mirror surface." }
+]
