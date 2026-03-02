@@ -1,9 +1,7 @@
 name: Update News
 
 on:
-  schedule:
-    - cron: '0 0 7 * *'      # 7th of every month at midnight UTC
-  workflow_dispatch:           # Manual trigger from GitHub UI
+  workflow_dispatch:           # Manual trigger from GitHub UI only
 
 jobs:
   build:
