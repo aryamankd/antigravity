@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const TEMPLATE = path.join(ROOT, 'template.html');
+const TEMPLATE = path.join(ROOT, 'src', 'template.html');
 const NEWS_DATA = path.join(ROOT, 'data', 'news.json');
 const DICT_DATA = path.join(ROOT, 'data', 'dictionary.json');
 const OUTPUT = path.join(ROOT, 'index.html');

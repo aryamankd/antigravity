@@ -1,4 +1,0 @@
-- Node.js is installed via nvm at `$HOME/.nvm/versions/node/v24.13.1/bin`
-- Puppeteer is installed locally in the project
-- Use `npx puppeteer screenshot index.html --fullpage` for screenshots
-- Open files in browser with `open index.html`
